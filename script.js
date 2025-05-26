@@ -1,4 +1,3 @@
-<script>
 function calcularTMB(peso, altura, idade, sexo) {
   return sexo === 'masculino'
     ? 10 * peso + 6.25 * altura - 5 * idade + 5
@@ -123,7 +122,6 @@ document.getElementById('formulario').addEventListener('submit', function (e) {
     showlegend: true
   });
 });
-</script>
 
 </body>
 </html>
