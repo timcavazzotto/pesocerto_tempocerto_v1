@@ -33,8 +33,9 @@ function simularPerdaPeso(input) {
     const dieta = get * 0.8;
     const deficit = (get - dieta) + treinoKcal;
 
-    let perdaKg = Math.min(1.5, Math.max(0.3, 7700 / deficit));
-    perdaKg *= (1 + Math.random() * 0.2 - 0.1);
+    let perdaKg = 2 * Math.exp(-0.1 * semanas);  // perda decrescendo com o tempo
+    perdaKg *= (1 + Math.random() * 0.1 - 0.05);  // flutuação de até ±5%
+    perdaKg = Math.min(perdaKg, pesoAtual - pesoDesejado); // evita passar do alvo
     pesoAtual -= perdaKg;
 
     dados.push({
