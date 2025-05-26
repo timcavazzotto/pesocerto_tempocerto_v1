@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const treinoKcal = diasTreino * gastoTreino * (1 - (pesoInicial - pesoAtual) / pesoInicial);
 
       const dieta = get * 0.8;
-      const deficit = (get - dieta) + treinoKcal;
 
       let perdaKg = 2 * Math.exp(-0.1 * semanas);  // perda decrescente
       perdaKg *= (1 + Math.random() * 0.1 - 0.05); // flutuação ±5%
@@ -87,6 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const fim = dados[dados.length - 1];
     document.getElementById('resumo').textContent =
       `Você atingirá o peso desejado em aproximadamente ${dados.length} semanas, até ${fim.data.toLocaleDateString()}.`;
+
+    // Limpar gráficos antigos
+    document.getElementById('grafico_peso').innerHTML = '';
+    document.getElementById('grafico_dieta').innerHTML = '';
 
     Plotly.newPlot('grafico_peso', [{
       x: dados.map(d => d.data),
