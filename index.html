@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="container">
-    <form id="formulario">
+    <form id="formulario" autocomplete="off">
       <label for="peso_atual">Peso Atual (kg):</label>
       <input id="peso_atual" type="number" step="0.1" min="1" required>
 
@@ -47,7 +47,7 @@
 
       <button type="submit">Calcular</button>
     </form>
-    <div id="resumo" class="resultados"></div>
+    <div id="resumo"></div>
     <div id="grafico_peso" class="resultados"></div>
     <div id="grafico_dieta" class="resultados"></div>
   </div>
