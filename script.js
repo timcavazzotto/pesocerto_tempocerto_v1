@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Evolução do Peso',
       xaxis: { title: 'Data' },
       yaxis: { title: 'Peso (kg)' },
-      showlegend: true
+      showlegend: false
     });
 
     Plotly.newPlot('grafico_dieta', [
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Dieta x GET',
       xaxis: { title: 'Data' },
       yaxis: { title: 'kcal' },
-      showlegend: true
+      showlegend: false
     });
   });
 });
