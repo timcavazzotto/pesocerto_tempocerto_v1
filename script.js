@@ -83,9 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    const fim = dados[dados.length - 1];
-    document.getElementById('resumo').textContent =
-      `Você atingirá o peso desejado em aproximadamente ${dados.length} semanas, até ${fim.data.toLocaleDateString()}.`;
+    const resumoElem = document.getElementById('resumo');
+    resumoElem.textContent =
+    `Você atingirá o peso desejado em aproximadamente ${dados.length} semanas, até ${fim.data.toLocaleDateString()}.`;
+    resumoElem.className = 'resumo-destaque';
 
     // Limpar gráficos antigos
     document.getElementById('grafico_peso').innerHTML = '';
