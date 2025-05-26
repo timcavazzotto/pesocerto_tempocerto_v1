@@ -107,5 +107,5 @@ document.getElementById('formulario').addEventListener('submit', function (e) {
   title: 'Dieta x GET',
   xaxis: { title: 'Data' },
   yaxis: { title: 'kcal' },
-  showlegend: false // ⬅️ esta linha oculta a legenda
+  showlegend: false // ✅ Esta linha vai dentro do mesmo objeto que xaxis e yaxis
 });
