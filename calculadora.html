@@ -4,20 +4,37 @@
   <meta charset="UTF-8">
   <title>Simulador de Perda de Peso</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Plotly.js CDN -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    .calculadora-botao {
+      display: inline-block;
+      background: #30475E;
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 6px;
+      font-size: 1.08em;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin: 18px auto 0 auto;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .calculadora-botao:hover {
+      background: #222f44;
+    }
+    .calculadora-botao-container {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container"> 
-    <!-- Link direto para a imagem raw no GitHub -->
-    <img 
-      src="https://raw.githubusercontent.com/timcavazzotto/lactase_calc/main/logo-mets2.png" 
-      alt="Logo METS" 
-      class="logo"
-    >
   <div class="container">
+    <h1>Simulador de Perda de Peso</h1>
+    <div class="calculadora-botao-container">
+      <a class="calculadora-botao" href="index.html">Como funciona?</a>
+    </div>
     <form id="formulario" autocomplete="off">
       <label for="peso_atual">Peso Atual (kg):</label>
       <input id="peso_atual" type="number" step="0.1" min="1" required>
