@@ -76,35 +76,36 @@ document.getElementById('formulario').addEventListener('submit', function (e) {
     `Você atingirá o peso desejado em aproximadamente ${dados.length} semanas, até ${fim.data.toLocaleDateString()}.`;
 
   Plotly.newPlot('grafico_peso', [{
-    x: dados.map(d => d.data),
-    y: dados.map(d => d.peso),
-    type: 'scatter',
-    mode: 'lines+markers',
-    name: 'Peso (kg)'
-  }], {
-    title: 'Evolução do Peso',
-    xaxis: { title: 'Data' },
-    yaxis: { title: 'Peso (kg)' }
-  });
+  x: dados.map(d => d.data),
+  y: dados.map(d => d.peso),
+  type: 'scatter',
+  mode: 'lines+markers',
+  name: 'Peso (kg)'
+}], {
+  title: 'Evolução do Peso',
+  xaxis: { title: 'Data' },
+  yaxis: { title: 'Peso (kg)' },
+  showlegend: false
+});
 
-  Plotly.newPlot('grafico_dieta', [
-    {
-      x: dados.map(d => d.data),
-      y: dados.map(d => d.dieta),
-      name: 'Dieta (kcal)',
-      type: 'scatter',
-      mode: 'lines+markers'
-    },
-    {
-      x: dados.map(d => d.data),
-      y: dados.map(d => d.get),
-      name: 'GET (kcal)',
-      type: 'scatter',
-      mode: 'lines+markers'
-    }
-  ], {
-    title: 'Dieta x GET',
-    xaxis: { title: 'Data' },
-    yaxis: { title: 'kcal' }
-  });
+ Plotly.newPlot('grafico_dieta', [
+  {
+    x: dados.map(d => d.data),
+    y: dados.map(d => d.dieta),
+    name: 'Dieta (kcal)',
+    type: 'scatter',
+    mode: 'lines+markers'
+  },
+  {
+    x: dados.map(d => d.data),
+    y: dados.map(d => d.get),
+    name: 'GET (kcal)',
+    type: 'scatter',
+    mode: 'lines+markers'
+  }
+], {
+  title: 'Dieta x GET',
+  xaxis: { title: 'Data' },
+  yaxis: { title: 'kcal' },
+  showlegend: false // ⬅️ esta linha oculta a legenda
 });
