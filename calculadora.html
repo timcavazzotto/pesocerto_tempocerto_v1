@@ -7,6 +7,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Garante que links com classe calculadora-botao herdem o estilo dos botões */
     .calculadora-botao {
       background: #30475E;
       color: #fff;
@@ -18,20 +19,23 @@
       display: block;
       width: 100%;
       max-width: 300px;
-      margin: 0 auto 15px auto;
+      margin: 0;
       font-family: Arial, sans-serif;
       text-align: center;
       transition: background 0.2s;
       cursor: pointer;
+      box-sizing: border-box;
     }
     .calculadora-botao:hover {
       background: #222f44;
     }
-    /* Garante que os botões tenham o mesmo tamanho */
-    form button,
-    .calculadora-botao {
-      width: 100%;
-      max-width: 300px;
+    /* Remove a margem extra padrão entre grid items */
+    form {
+      gap: 10px;
+    }
+    /* Remove qualquer margin do button dentro do form */
+    form button {
+      margin: 0;
     }
   </style>
 </head>
