@@ -20,7 +20,7 @@ form label {
 
 input, select {
   width: 100%;        /* ou 300px se quiser fixo */
-  padding: 5px;
+  padding: 10px;
   margin-top: 5px;
   max-width: 300px;   /* limita largura em telas grandes */
   box-sizing: border-box;
@@ -29,7 +29,7 @@ input, select {
 button {
   margin-top: 15px;
   padding: 10px;
-  background: #28a745;
+  background: #30475E;
   color: white;
   border: none;
   width: 100%;
