@@ -13,26 +13,25 @@ body {
   border-radius: 10px;
 }
 
-/* Form grid for neat alignment */
 form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px;
-  max-width: 340px; /* 300px input + 2*20px padding */
+  gap: 10px;
+  max-width: 340px; /* 300px input + padding */
   margin: auto;
 }
 
 form label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-weight: 500;
 }
 
 input, select {
   width: 100%;
   padding: 10px;
-  max-width: 300px;
   margin-top: 0;
+  max-width: 300px;
   box-sizing: border-box;
   display: block;
 }
@@ -53,7 +52,6 @@ button {
   margin-top: 30px;
 }
 
-/* Responsive adjustment for mobile */
 @media (max-width: 480px) {
   .container, form {
     max-width: 100%;
