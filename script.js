@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'muito ativo': 1.725,
       'extremamente ativo': 1.9
     };
-    return fatores[nivel.toLowerCase()] || 1.2;
+    return fatores[(nivel || '').toLowerCase()] || 1.2;
   }
 
   function simularPerdaPeso(input) {
@@ -56,6 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('formulario').addEventListener('submit', function (e) {
     e.preventDefault();
+    const resumoElem = document.getElementById('resumo');
+    resumoElem.textContent = '';
+    resumoElem.className = '';
 
     const input = {
       pesoAtual: parseFloat(document.getElementById('peso_atual').value),
@@ -70,22 +73,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Validação extra
     for (const key in input) {
-      if (isNaN(input[key]) && key !== 'sexo' && key !== 'nivelAtividade') {
-        document.getElementById('resumo').textContent = `Campo inválido: ${key}`;
+      if ((key !== 'sexo' && key !== 'nivelAtividade') && (isNaN(input[key]) || input[key] === null)) {
+        resumoElem.textContent = `Campo inválido: ${key}`;
+        resumoElem.className = '';
         return;
       }
     }
 
     const dados = simularPerdaPeso(input);
 
-    if (dados.length === 0) {
-      document.getElementById('resumo').textContent = 'Não foi possível simular. Verifique os dados.';
+    if (!dados || dados.length === 0) {
+      resumoElem.textContent = 'Não foi possível simular. Verifique os dados.';
+      resumoElem.className = '';
       return;
     }
 
-    const resumoElem = document.getElementById('resumo');
+    const fim = dados[dados.length - 1];
     resumoElem.textContent =
-    `Você atingirá o peso desejado em aproximadamente ${dados.length} semanas, até ${fim.data.toLocaleDateString()}.`;
+      `Você atingirá o peso desejado em aproximadamente ${dados.length} semanas, até ${fim.data.toLocaleDateString()}.`;
     resumoElem.className = 'resumo-destaque';
 
     // Limpar gráficos antigos
