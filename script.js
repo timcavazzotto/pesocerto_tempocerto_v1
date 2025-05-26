@@ -33,7 +33,7 @@ function simularPerdaPeso(input) {
     const dieta = get * 0.8;
     const deficit = (get - dieta) + treinoKcal;
 
-    let perdaKg = Math.min(2, Math.max(0.5, 7700 / deficit));
+    let perdaKg = Math.min(1.5, Math.max(0.3, 7700 / deficit));
     perdaKg *= (1 + Math.random() * 0.2 - 0.1);
     pesoAtual -= perdaKg;
 
