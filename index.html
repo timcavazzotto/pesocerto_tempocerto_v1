@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Perda de Peso</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador de Perda de Peso</h1>
+    <form id="formulario">
+      <fieldset>
+        <legend>Dados Iniciais</legend>
+        <label>Peso Atual (kg): <input type="number" id="peso_atual" value="85" required></label>
+        <label>Peso Desejado (kg): <input type="number" id="peso_desejado" value="75" required></label>
+        <label>Altura (cm): <input type="number" id="altura" value="175" required></label>
+        <label>Idade: <input type="number" id="idade" value="30" required></label>
+        <label>Sexo:
+          <select id="sexo">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+        </label>
+        <label>Nível de Atividade:
+          <select id="nivel_atividade">
+            <option value="sedentario">Sedentário</option>
+            <option value="levemente ativo">Levemente Ativo</option>
+            <option value="moderadamente ativo" selected>Moderadamente Ativo</option>
+            <option value="muito ativo">Muito Ativo</option>
+            <option value="extremamente ativo">Extremamente Ativo</option>
+          </select>
+        </label>
+        <label>Dias de Treino/semana: <input type="number" id="dias_treino" value="4"></label>
+        <label>Gasto por Treino (kcal): <input type="number" id="gasto_por_treino" value="300"></label>
+        <button type="submit">Simular</button>
+      </fieldset>
+    </form>
+
+    <div class="resultados">
+      <h2>Resultados</h2>
+      <p id="resumo"></p>
+      <div id="grafico_peso"></div>
+      <div id="grafico_dieta"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
