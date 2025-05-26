@@ -2,14 +2,14 @@ body {
   font-family: Arial, sans-serif;
   background: #f8f8f8;
   margin: 0;
-  padding: 15px;
+  padding: 20px;
 }
 
 .container {
   max-width: 900px;
   margin: auto;
   background: white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
 }
 
@@ -19,9 +19,11 @@ form label {
 }
 
 input, select {
-  width: 100%;
+  width: 50%;        /* ou 300px se quiser fixo */
   padding: 5px;
   margin-top: 5px;
+  max-width: 300px;   /* limita largura em telas grandes */
+  box-sizing: border-box;
 }
 
 button {
