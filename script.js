@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function simularPerdaPeso(input) {
     let {
       pesoAtual, pesoDesejado, altura, idade, sexo,
-      nivelAtividade, diasTreino, gastoTreino
+      nivelAtividade, diasTreino
     } = input;
 
     const dados = [];
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const get = tmb * fatorAtividade(nivelAtividade);
 
       // Reduz o impacto do treino com a perda de peso
-      const treinoKcal = diasTreino * gastoTreino * (1 - (pesoInicial - pesoAtual) / pesoInicial);
+      const treinoKcal = diasTreino * 350 * (1 - (pesoInicial - pesoAtual) / pesoInicial);
 
       const dieta = get * 0.8;
 
@@ -67,8 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
       idade: parseInt(document.getElementById('idade').value),
       sexo: document.getElementById('sexo').value,
       nivelAtividade: document.getElementById('nivel_atividade').value,
-      diasTreino: parseInt(document.getElementById('dias_treino').value),
-      gastoTreino: parseInt(document.getElementById('gasto_por_treino').value)
+      diasTreino: parseInt(document.getElementById('dias_treino').value)
     };
 
     // Validação extra
